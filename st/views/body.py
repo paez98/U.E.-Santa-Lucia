@@ -1,5 +1,6 @@
 import reflex as rx
 from st.triggers.cards import carta
+from st.components.link_card import link_card
 
 from PIL import Image
 import requests
@@ -28,6 +29,8 @@ def body() -> rx.Component:
                 # border_radius = '1em'
             ),
             rx.hstack(
+
+                link_card(),
                 rx.flex(
                     rx.box(
                         rx.icon(
@@ -40,14 +43,17 @@ def body() -> rx.Component:
                         border_radius='50em',
                         width='auto',
                         height='100%',
-                        bg='#5FB4EE'
+                        bg='#5FB4EE',
 
                     ),
                     rx.heading('PREESCOLAR', color='#ffff'),
+
                     direction='column',
-                    align='center',
-                    spacing='5'
                 ),
+
+                # align='center',
+                # spacing='5'
+
                 rx.flex(
                     rx.box(
                         rx.icon(tag='rocket', size=100,
